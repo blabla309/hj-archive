@@ -1,10 +1,7 @@
 <?php
-
-require_once '../domain/Post.php';
 /**
- * User: 김형주
+ * User: hjkim
  * Date: 2018-10-25
- * Time: 오전 9:27
  */
 
 class PostRepository extends Repository{

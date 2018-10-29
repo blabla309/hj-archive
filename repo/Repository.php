@@ -1,10 +1,8 @@
 <?php
 /**
- * User: 김형주
+ * User: hjkim
  * Date: 2018-10-24
- * Time: 오후 5:34
  */
-require_once "../domain/Domain.php";
 
 abstract class Repository{
   public $tableName;
@@ -18,13 +16,9 @@ abstract class Repository{
   private function getQueryWhere($param){
 
   }
-
-
   private function getQueryOrder($param){
 
   }
-
-
   private function getQueryLimit($param){
 
   }

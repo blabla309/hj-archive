@@ -1,8 +1,7 @@
 <?php
 /**
- * User: 김형주
+ * User: hjkim
  * Date: 2018-10-25
- * Time: 오전 10:45
  */
 
 class Comment{

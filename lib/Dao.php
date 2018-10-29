@@ -1,8 +1,7 @@
 <?php
 /**
- * User: 김형주
+ * User: hjkim
  * Date: 2018-10-24
- * Time: 오후 4:06
  */
 
 require_once '/home/' . get_current_user() . '/ini/crm/cfg/def.php';

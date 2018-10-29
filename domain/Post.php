@@ -5,7 +5,6 @@
  * Date: 2018-10-25
  * Time: 오전 10:29
  */
-require_once 'Domain.php';
 
 class Post
 {
