@@ -26,6 +26,7 @@ class Dao{
     }
 
     if(!$dao){
+      print "<br/>Instance";
       $dao = new Dao($dbName);
       self::$daoInstances[$dbName] = $dao;
     }
@@ -33,21 +34,13 @@ class Dao{
     return $dao;
   }
   public function connect(){
-    //$ini = parse_ini_file(_COM_INI_HOM_DIR . '/conf/db.ini', true);
-    //$dbInfo = $ini[$this->dbName];
+    $ini = parse_ini_file(_INI_HOM_DIR . '/conf/db.ini', true);
+    $dbInfo = $ini[$this->dbName];
 
-    #TEST
-    $dbInfo = array();
-    $dbInfo['type'] = 'pgsql';
-    $dbInfo['host'] = 'localhost';
-    $dbInfo['user'] = 'kimhj';
-    $dbInfo['pw'] = 'gudwn309((';
-    $dbInfo['db'] = 'hj_archive';
-    
     switch ($dbInfo['type']){
       case 'pgsql':
         //PDO Host String
-        $connectionStr= "pgsql:host={$dbInfo['host']};port=5432;dbname={$dbInfo['db']};user={$dbInfo['user']};password={$dbInfo['pw']}";
+        $connectionStr= "pgsql:host={$dbInfo['host']};port=5432;dbname={$dbInfo['db']};";
         break;
       case 'mysql':
         $connectionStr= "mysql:host={$dbInfo['host']};port=3306;dbname={$dbInfo['db']};";
@@ -58,11 +51,11 @@ class Dao{
 
     //PDO function
     print "$connectionStr<br>" ;
-    $this->connection = new PDO($connectionStr);
-    //$this->connection = new PDO($connectionStr, $dbInfo['user'], $dbInfo['pw']);
+    //$this->connection = new PDO($connectionStr);
+    $this->connection = new PDO($connectionStr, $dbInfo['user'], $dbInfo['pw']);
 
     if($this->connection){
-      print "Connected Successfully";
+      print "<br/>Connected Successfully";
     }
 
 
