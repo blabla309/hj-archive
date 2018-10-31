@@ -42,10 +42,8 @@ class Dao{
         //PDO Host String
         $connectionStr= "pgsql:host={$dbInfo['host']};port=5432;dbname={$dbInfo['db']};";
         break;
-      case 'mysql':
+      case 'mysql':case 'mariadb':
         $connectionStr= "mysql:host={$dbInfo['host']};port=3306;dbname={$dbInfo['db']};";
-        break;
-      case 'mariadb':
         break;
     }
 
