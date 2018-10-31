@@ -38,6 +38,7 @@ class Dao{
 
     switch ($dbInfo['type']){
       case 'pgsql':
+        //PDO Host String
         //$connectionStr= "pgsql:host={$dbInfo['host']};port=5432;dbname={$dbInfo['db']};user={$dbInfo['user']};password={$dbInfo['pw']}";
         $connectionStr = "host={$dbInfo['host']} dbname={$dbInfo['db']} user={$dbInfo['user']} password={$dbInfo['pw']}";
         break;
@@ -48,6 +49,7 @@ class Dao{
     }
 
     $this->connection = pg_connect($connectionStr);
+    //PDO function
     //$this->connection = new PDO($connectionStr);
 
     if($this->connection){
@@ -61,6 +63,12 @@ class Dao{
   public function excute($query, $param=array()){
 
   }
+
+  public function fetch(){
+
+  }
+
+
 }
 
 ?>
