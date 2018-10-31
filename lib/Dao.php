@@ -36,21 +36,26 @@ class Dao{
     $ini = parse_ini_file(_COM_INI_HOM_DIR . '/cfg/db.ini', true);
     $dbInfo = $ini[$this->dbName];
 
+    #TEST
+    $dbinfo['type'] = 'psgql';
+    $dbinfo['host'] = 'hj_archive';
+    $dbinfo['pw'] = 'gudwn309((';
+    $dbinfo['db'] = 'hj_archive';
+
     switch ($dbInfo['type']){
       case 'pgsql':
         //PDO Host String
-        //$connectionStr= "pgsql:host={$dbInfo['host']};port=5432;dbname={$dbInfo['db']};user={$dbInfo['user']};password={$dbInfo['pw']}";
-        $connectionStr = "host={$dbInfo['host']} dbname={$dbInfo['db']} user={$dbInfo['user']} password={$dbInfo['pw']}";
+        $connectionStr= "pgsql:host={$dbInfo['host']};port=5432;dbname={$dbInfo['db']};user={$dbInfo['user']};password={$dbInfo['pw']}";
         break;
       case 'mysql':
+        $connectionStr= "mysql:host={$dbInfo['host']};port=3306;dbname={$dbInfo['db']};user={$dbInfo['user']};password={$dbInfo['pw']}";
         break;
       case 'mariadb':
         break;
     }
 
-    $this->connection = pg_connect($connectionStr);
     //PDO function
-    //$this->connection = new PDO($connectionStr);
+    $this->connection = new PDO($connectionStr);
 
     if($this->connection){
       print "Connected Successfully";
