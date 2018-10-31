@@ -3,6 +3,8 @@
  * User: hjkim
  * Date: 2018-10-24
  */
+require_once "/home/". get_current_user() . "/init/conf/def.php";
+
 
 class Dao{
   private static $daoInstances = array();
@@ -31,7 +33,7 @@ class Dao{
     return $dao;
   }
   public function connect(){
-    //$ini = parse_ini_file(_COM_INI_HOM_DIR . '/cfg/db.ini', true);
+    //$ini = parse_ini_file(_COM_INI_HOM_DIR . '/conf/db.ini', true);
     //$dbInfo = $ini[$this->dbName];
 
     #TEST
