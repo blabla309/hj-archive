@@ -5,7 +5,7 @@
  */
 
 class Dao{
-  private static $daoInstances;
+  private static $daoInstances = array();
   private $dbName;
   private $connection;
   private $psmt;
@@ -35,7 +35,8 @@ class Dao{
     //$dbInfo = $ini[$this->dbName];
 
     #TEST
-    $dbinfo['type'] = 'psgql';
+    $dbInfo = array();
+    $dbinfo['type'] = 'mysql';
     $dbinfo['host'] = 'hj_archive';
     $dbinfo['pw'] = 'gudwn309((';
     $dbinfo['db'] = 'hj_archive';
