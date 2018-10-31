@@ -50,7 +50,7 @@ class Dao{
     }
 
     //PDO function
-    print "$connectionStr<br>" ;
+    print "<br/>$connectionStr" ;
     //$this->connection = new PDO($connectionStr);
     $this->connection = new PDO($connectionStr, $dbInfo['user'], $dbInfo['pw']);
 
