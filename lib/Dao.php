@@ -31,8 +31,8 @@ class Dao{
     return $dao;
   }
   public function connect(){
-    $ini = parse_ini_file(_COM_INI_HOM_DIR . '/cfg/db.ini', true);
-    $dbInfo = $ini[$this->dbName];
+    //$ini = parse_ini_file(_COM_INI_HOM_DIR . '/cfg/db.ini', true);
+    //$dbInfo = $ini[$this->dbName];
 
     #TEST
     $dbinfo['type'] = 'psgql';
