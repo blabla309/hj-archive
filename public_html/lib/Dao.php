@@ -19,6 +19,11 @@ class Dao{
     $this->connect();
   }
 
+  public function __destruct(){
+    unset($this->daoInstances[$this->dbName]);
+    $this->close();
+  }
+
   public static function getInstance($dbName, $params=array()){
     $dao=null;
     if(key_exists($dbName, self::$daoInstances)){
@@ -26,7 +31,6 @@ class Dao{
     }
 
     if(!$dao){
-      print "<br/>Instance";
       $dao = new Dao($dbName);
       self::$daoInstances[$dbName] = $dao;
     }
@@ -48,18 +52,17 @@ class Dao{
     }
 
     //PDO function
-    print "<br/>$connectionStr" ;
-    //$this->connection = new PDO($connectionStr);
     $this->connection = new PDO($connectionStr, $dbInfo['user'], $dbInfo['pw']);
 
     if($this->connection){
-      print "<br/>Connected Successfully";
+
     }
-
-
   }
-  public function disConnect(){}
-  public function close(){}
+
+  public function close(){
+    $this->connection = null;
+  }
+
   public function excute($query, $param=array()){
 
   }
