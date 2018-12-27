@@ -6,7 +6,10 @@
 
 define('_CUR_USR', get_current_user());
 define('_USR_DIR', '/home/' . _CUR_USR);
-define('_USR_WWW_DIR', _USR_DIR);
+define('_CONTROLLER_DIR', _USR_DIR . "/controller");
+define('_DOMAIN_DIR', _USR_DIR . "/domain");
+
+
 define('_BAS_URL', 'http://khj309.myzio.co.kr');
 
 define('_USR_URL', _BAS_URL . '/~' . _CUR_USR);
