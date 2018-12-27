@@ -5,7 +5,7 @@
  */
 
 require_once "/home/". get_current_user() . "/init/conf/def.php";
-require_once _USR_WWW_DIR . "/controller/FrontController.php";
+require_once _USR_WWW_DIR . "/controller/CommentController.php";
 
 class Index{
   public function __construct(){
@@ -15,7 +15,8 @@ class Index{
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $query = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
 
-    new FrontController();
+//    new FrontController();
+
     /*
 
     $path_arr = explode('/', $path);
