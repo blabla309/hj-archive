@@ -9,9 +9,13 @@ class Index{
   public function __construct(){
     #TEST
     $requestType = $_SERVER['REQUEST_METHOD'];
+    $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-    print "Request Type : $requestType <br/>";
-    print_r($_GET['param']);
+    print <<<EOM
+Path: {$path}
+Request Type : $requestType
+
+EOM;
   }
 }
 
