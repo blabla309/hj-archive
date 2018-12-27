@@ -5,7 +5,7 @@
  */
 
 require_once "/home/". get_current_user() . "/init/conf/def.php";
-require_once _USR_WWW_DIR . "/controller/FrontController.php";
+require_once _CONTROLLER_DIR . "/controller/Controller.php";
 
 class Index{
   public function __construct(){
